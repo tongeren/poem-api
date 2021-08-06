@@ -1,16 +1,16 @@
-const Sequilize = require('sequelize');
-const sequilize = require('../util/database');
+const Sequelize = require('sequelize');
+const sequelize = require('../util/database');
 const Poem = require('./poem');
 
-const Sentence = sequilize.define('sentence', {
+const Sentence = sequelize.define('sentence', {
     id: {
-        type: Sequilize.INTEGER,
+        type: Sequelize.INTEGER,
         autoIncrement: true,
         allowNull: false,
         primaryKey: true
     },
     poem_id: {
-        type: Sequilize.INTEGER,
+        type: Sequelize.INTEGER,
         references: {
             model: Poem,
             key: 'id',
@@ -19,10 +19,10 @@ const Sentence = sequilize.define('sentence', {
         }
     },
     line: {
-        type: Sequilize.TEXT
+        type: Sequelize.TEXT
     },
     order: {
-        type: Sequilize.SMALLINT
+        type: Sequelize.SMALLINT
     }
 });
 

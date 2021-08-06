@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "DATABASE_URL=$(heroku config:get DATABASE_URL) nodemon"
   },
   "author": "Duncan van Tongeren",
   "license": "MIT",
@@ -14,6 +14,10 @@
     "sequelize": "^6.6.5"
   },
   "devDependencies": {
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.12",
+    "sequelize-cli": "^6.2.0"
+  },
+  "engines": {
+    "node": "14.17"
   }
 }
